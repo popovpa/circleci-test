@@ -7,7 +7,6 @@ commands:
           name: Setup environments
           command: |
             ARR=("v1 v2 v3")
-            echo "export VALS=`echo "${ARR[*]}"`" >> $BASH_ENV
             source $BASH_ENV
 jobs:
   build:
@@ -21,6 +20,7 @@ jobs:
           name: Simple check ETL integrity
           command: |
             ls -la
+            VALS="v1 v2 v3"
             echo $VALS
             echo '>>>>'
             for v in $VALS; do
