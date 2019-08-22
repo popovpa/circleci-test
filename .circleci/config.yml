@@ -6,7 +6,7 @@ commands:
       - run:
           name: Setup environments
           command: |
-            echo "export VALS=`echo $("value1 value2 value3")`" >> $BASH_ENV
+            echo "export VALS=`echo ("value1 value2 value3")`" >> $BASH_ENV
             source $BASH_ENV
 jobs:
   build:
