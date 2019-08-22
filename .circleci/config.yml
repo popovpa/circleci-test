@@ -8,15 +8,16 @@ commands:
           command: |
             echo "export VALS=`echo "value1 value2 value3"`" >> $BASH_ENV
             source $BASH_ENV
-build:
-  working_directory: ~/src
-  machine:
-    image: ubuntu-1604:201903-01
-  steps:
-    - checkout
-    - setup_env
-    - run:
-        name: Simple check ETL integrity
-        command: |
+jobs:
+  build:
+    working_directory: ~/src
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - checkout
+      - setup_env
+      - run:
+          name: Simple check ETL integrity
+          command: |
             ls -la
             echo $VALS
